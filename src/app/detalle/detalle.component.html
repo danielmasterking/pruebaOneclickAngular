@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 class="text-center">{{title}} {{cliente}}</h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Cantidad de Personal</th>
+                        <th>Presupuesto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let detalle of detalleFicha">
+                        <td>{{detalle.categoria}}</td>
+                        <td>{{detalle.cantidad_personal}}</td>
+                        <td>{{detalle.presupuesto}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,49 @@
+<h1 class="text-center">{{title}}</h1>
+
+<div class="col-md-4 float-right">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+        </svg>
+      </span>
+    </div>
+    <input type="text" class="form-control" placeholder="Buscar Consecutivo..." [ngModel]="filtro" (keyup) ='buscarRegistro()'>
+    {{filtro}}
+  </div>
+</div>
+<br><br>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped" style="text-align: center;">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nit</th>
+          <th>Nombre</th>
+          <th>Consecutivo</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td>{{cliente.id}}</td>
+          <td>{{cliente.nit}}</td>
+          <td>{{cliente.nombre}}</td>
+          <td>{{cliente.consecutivo}}</td>
+          <td>{{cliente.estado}}</td>
+          <td>
+            <button class="btn btn-primary" (click)="detalle(cliente.id , cliente.nombre)">
+                Detalle
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
