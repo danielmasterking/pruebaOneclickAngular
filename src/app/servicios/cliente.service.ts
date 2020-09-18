@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ClienteService {
-  url = 'http://localhost/pruebaOneclick/public/api/';
+  url = 'http://localhost/PruebaOneclickLaravel/public/api/';
   constructor(private http: HttpClient) { }
 
   obtenerClientes() {
